@@ -1,0 +1,16 @@
+{
+    "name": "idimensionz/linode-api-v4-examples",
+    "description": "Examples of how to use iDimensionz's PHP client for Linode API v4.",
+    "type": "library",
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Jim Mullen",
+            "email": "info@idimensionz.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "idimensionz/linode-api-v4": "dev-master"
+    }
+}
