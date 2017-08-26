@@ -11,6 +11,6 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "idimensionz/linode-api-v4": "dev-master"
+        "idimensionz/linode-api-v4": "dev-php7.0"
     }
 }

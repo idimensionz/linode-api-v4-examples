@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "47d058aa229e4f4ce0f405ee86a7e426",
+    "content-hash": "6144a14d3aa133aad4ae266a7c9ae6a0",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -231,30 +231,32 @@
         },
         {
             "name": "idimensionz/linode-api-v4",
-            "version": "dev-master",
+            "version": "dev-php7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/idimensionz/linode-api-v4.git",
-                "reference": "a0c6b096c872adc2d2198ae4ce65094081a3a102"
+                "reference": "ae84d1462e36a124136d83b07d001e39f9075c90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/idimensionz/linode-api-v4/zipball/a0c6b096c872adc2d2198ae4ce65094081a3a102",
-                "reference": "a0c6b096c872adc2d2198ae4ce65094081a3a102",
+                "url": "https://api.github.com/repos/idimensionz/linode-api-v4/zipball/ae84d1462e36a124136d83b07d001e39f9075c90",
+                "reference": "ae84d1462e36a124136d83b07d001e39f9075c90",
                 "shasum": ""
             },
             "require": {
-                "idimensionz/http-client": "v1.0.1.x-dev"
+                "idimensionz/http-client": "v1.0.1.x-dev",
+                "php": "^7.0"
             },
             "require-dev": {
                 "codeclimate/php-test-reporter": "^0.4.4",
-                "phake/phake": "<3.0.0",
-                "phpunit/phpunit": "5.7.x-dev"
+                "phake/phake": "^3.0.0",
+                "phpunit/phpunit": "^6.3"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "iDimensionz\\": "lib/"
+                    "iDimensionz\\": "src/",
+                    "iDimensionz\\Tests\\": "tests/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -268,7 +270,7 @@
                 }
             ],
             "description": "PHP client for Linode API v4",
-            "time": "2017-08-20 20:52:53"
+            "time": "2017-08-26 02:41:41"
         },
         {
             "name": "psr/http-message",
