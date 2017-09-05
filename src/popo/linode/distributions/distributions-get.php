@@ -48,7 +48,7 @@ $filter = new DistributionFilter();
 
 // Check for filter options.
 // -l for label, -m for minimum storage size, -d for deprecated, and -v for vendor
-$options = getopt('l:m:d:v:');
+$options = getopt('i:l:m:d:v:');
 
 // Get the label filter option and add a filter for it.
 $labelOption = isset($options['l']) ? $options['l'] : null;
@@ -77,8 +77,13 @@ $filter->addVendorFilter($vendorOption);
 $distributionsApi->setFilter($filter);
 /* END OPTIONAL filtering code. */
 
-// Call the function to get all the distributions.
-// The DistributionsApi class will utilize the filter object that was injected when calling the Linode endpoint.
-$distributions = $distributionsApi->getAllDistributions();
+// Call the getById() endpoint if an ID was supplied.
+if (isset($options['i'])) {
+    $distributions = $distributionsApi->getById($options['i']);
+} else {
+    // Otherwise, call the function to get all the distributions.
+    // The DistributionsApi class will utilize the filter object that was injected when calling the Linode endpoint.
+    $distributions = $distributionsApi->getAllDistributions();
+}
 // Output the domain data.
 print_r($distributions);
