@@ -79,11 +79,11 @@ $distributionsApi->setFilter($filter);
 
 // Call the getById() endpoint if an ID was supplied.
 if (isset($options['i'])) {
-    $distributions = $distributionsApi->getById($options['i']);
+    $distributionModels = $distributionsApi->getById($options['i']);
 } else {
     // Otherwise, call the function to get all the distributions.
     // The DistributionsApi class will utilize the filter object that was injected when calling the Linode endpoint.
-    $distributions = $distributionsApi->getAllDistributions();
+    $distributionModels = $distributionsApi->getAll();
 }
 // Output the domain data.
-print_r($distributions);
+print_r($distributionModels);
