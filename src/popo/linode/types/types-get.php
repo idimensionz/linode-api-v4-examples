@@ -46,18 +46,19 @@ $typesApi = new TypesApi($httpClient);
 $filter = new TypeFilter();
 
 // Check for options.
-// -z for xen, -k for kvm, -l for label, -v for version, -x for x64, -c for current, -d for deprecated
-$options = getopt('z:k:l:v:x:c:d:i:');
+// -s for storage, -h for hourly price, -l for label, -b for bandwidth, -m for monthly price, -r for ram, -t for transfer, -c for cpus, -i for ID
+$options = getopt('s:h:l:b:m:r:t:c:i:');
 
-/*
-// Get the Xen filter option and add a filter for it.
-if (isset($options['z'])) {
-    $filter->addXenFilter($options['z']);
+// Get the storage filter option and add a filter for it.
+// @todo Figure out why the storage filter does not seem to work.
+if (isset($options['s'])) {
+    $filter->addStorageFilter($options['s']);
 }
 
-// Get the KVM filter option and add a filter for it.
-if (isset($options['k'])) {
-    $filter->addKvmFilter($options['k']);
+// Get the hourly price filter option and add a filter for it.
+if (isset($options['h'])) {
+    // @todo Create an hourly price filter.
+    //    $filter->addHourlyPriceFilter($options['h']);
 }
 
 // Get the label filter option and add a filter for it.
@@ -65,30 +66,35 @@ $labelOption = isset($options['l']) ? $options['l'] : null;
 // The filter will ignore the label option if it is empty.
 $filter->addLabelFilter($labelOption);
 
-// Get the version filter option and add a filter for it.
-$versionOption = isset($options['v']) ? $options['v'] : null;
-// The filter will ignore the version option if it is empty.
-$filter->addVersionFilter($versionOption);
-
-// Get the x64 filter option and add a filter for it.
-if (isset($options['x'])) {
-    $filter->addX64Filter($options['x']);
+// Get the outbound bandwidth filter option and add a filter for it.
+if (isset($options['b'])) {
+    $filter->addOutboundBandwidthFilter($options['b']);
 }
 
-// Get the current filter option and add a filter for it.
-if (isset($options['c'])) {
-    $filter->addCurrentFilter($options['c']);
+// Get the monthly price filter option and add a filter for it.
+if (isset($options['m'])) {
+    $filter->addMonthlyPriceFilter($options['m']);
 }
 
-// Get the deprecated filter option and add a filter for it.
-if(isset($options['d'])) {
+// Get the RAM filter option and add a filter for it.
+if (isset($options['r'])) {
+    $filter->addRamFilter($options['r']);
+}
+
+// Get the outbound transfer filter option and add a filter for it.
+if(isset($options['t'])) {
     // The filter will cast the deprecated value to a bool.
-    $filter->addDeprecatedFilter((int) $options['d']);
+    $filter->addOutboundTransferFilter($options['t']);
+}
+
+// Get the outbound CPUs filter option and add a filter for it.
+if(isset($options['c'])) {
+    $filter->addCpuCoreCountFilter($options['c']);
 }
 
 // Set the filter in the Domain API.
 $typesApi->setFilter($filter);
-*/
+
 /* END OPTIONAL filtering code. */
 
 // Call the getById() endpoint if an ID was supplied.
