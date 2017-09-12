@@ -69,6 +69,7 @@ $regionsApi->setFilter($filter);
 
 /* END OPTIONAL filtering code. */
 
+
 // Call the getById() endpoint if an ID was supplied.
 if (isset($options['i'])) {
     $regionModels = $regionsApi->getById($options['i']);

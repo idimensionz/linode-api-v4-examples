@@ -34,7 +34,7 @@ require_once(dirname(dirname(dirname(dirname(dirname(__FILE__))))) . '/vendor/au
 
 use iDimensionz\HttpClient\Guzzle\GuzzleHttpClient;
 use iDimensionz\LinodeApiV4\Api\Linode\Distributions\DistributionsApi;
-use iDimensionz\LinodeApiV4\Api\Linode\Distributions\Filters\DistributionFilter;
+use iDimensionz\LinodeApiV4\Api\Linode\Distributions\DistributionFilter;
 
 // Setup the HTTP client. No API token in the header for this endpoint.
 $httpClient = new GuzzleHttpClient();

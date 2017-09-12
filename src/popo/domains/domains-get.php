@@ -35,7 +35,7 @@ require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/vendor/autoload.ph
 
 use iDimensionz\HttpClient\Guzzle\GuzzleHttpClient;
 use iDimensionz\LinodeApiV4\Api\Domains\DomainsApi;
-use iDimensionz\LinodeApiV4\Api\Domains\Filters\DomainFilter;
+use iDimensionz\LinodeApiV4\Api\Domains\DomainFilter;
 
 // Get the API token from the LINODE_API_TOKEN environment variable.
 // That environment variable needs to be set before running this script.
