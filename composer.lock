@@ -193,12 +193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/idimensionz/http-client.git",
-                "reference": "adf5bb192e1ae85aec0bf30f517315317bf9480f"
+                "reference": "9c1b22715bdffd12d5818fa446616b42e02099e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/idimensionz/http-client/zipball/adf5bb192e1ae85aec0bf30f517315317bf9480f",
-                "reference": "adf5bb192e1ae85aec0bf30f517315317bf9480f",
+                "url": "https://api.github.com/repos/idimensionz/http-client/zipball/9c1b22715bdffd12d5818fa446616b42e02099e7",
+                "reference": "9c1b22715bdffd12d5818fa446616b42e02099e7",
                 "shasum": ""
             },
             "require": {
@@ -227,7 +227,7 @@
                 }
             ],
             "description": "PHP HTTP client interface and implementations",
-            "time": "2017-07-26 01:31:46"
+            "time": "2017-09-15 01:47:31"
         },
         {
             "name": "idimensionz/linode-api-v4",
@@ -235,12 +235,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/idimensionz/linode-api-v4.git",
-                "reference": "c335e41ea6dc8fa8969f157de1373aae81e0ebeb"
+                "reference": "a04ff99aef1b96e896d9ae5f435478025ff72eac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/idimensionz/linode-api-v4/zipball/c335e41ea6dc8fa8969f157de1373aae81e0ebeb",
-                "reference": "c335e41ea6dc8fa8969f157de1373aae81e0ebeb",
+                "url": "https://api.github.com/repos/idimensionz/linode-api-v4/zipball/a04ff99aef1b96e896d9ae5f435478025ff72eac",
+                "reference": "a04ff99aef1b96e896d9ae5f435478025ff72eac",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +270,7 @@
                 }
             ],
             "description": "PHP client for Linode API v4",
-            "time": "2017-09-12 18:33:29"
+            "time": "2017-09-19 03:13:51"
         },
         {
             "name": "psr/http-message",
