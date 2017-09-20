@@ -80,7 +80,7 @@ if ($token !== false) {
 
     // Call the function to get all the domains.
     // The DomainsApi class will utilize the filter object that was injected when calling the Linode endpoint.
-    $domains = $domainsApi->getAllDomains();
+    $domains = $domainsApi->getAll();
     // Output the domain data.
     print_r($domains);
 } else {
