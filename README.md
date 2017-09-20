@@ -6,12 +6,12 @@ Examples of how to use iDimensionz's Linode API v4.  Our PHP client is available
 3. Run `composer install` .
 4. CD to the appropriate directory and run an example.
    
-   `cd src`
+   `cd linode-api-v4-examples/src/linode/distributions`
    
-   `php popo.php`
+   `php distributions-get.php`
 
 ### Note ###
-Set your Linode API key in an environment variable called LINODE_API_TOKEN **before** running these examples.
+Set your Linode API key in an environment variable called LINODE_API_TOKEN **before** running any examples for API endpoints that require an API token.
 
 ### Discuss ###
 Join our HipChat room to discuss iDimensionz's PHP client for Linode API v4 https://www.hipchat.com/gVo6hNME1
