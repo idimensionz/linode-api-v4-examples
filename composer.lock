@@ -235,12 +235,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/idimensionz/linode-api-v4.git",
-                "reference": "bd795a7442e04e2a66967aeb4e1b7f47af7b9fe5"
+                "reference": "7a76be96a03f01bcbd357cc32e435e17eab6c89e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/idimensionz/linode-api-v4/zipball/bd795a7442e04e2a66967aeb4e1b7f47af7b9fe5",
-                "reference": "bd795a7442e04e2a66967aeb4e1b7f47af7b9fe5",
+                "url": "https://api.github.com/repos/idimensionz/linode-api-v4/zipball/7a76be96a03f01bcbd357cc32e435e17eab6c89e",
+                "reference": "7a76be96a03f01bcbd357cc32e435e17eab6c89e",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +270,7 @@
                 }
             ],
             "description": "PHP client for Linode API v4",
-            "time": "2017-09-20 02:38:20"
+            "time": "2017-09-23 21:09:45"
         },
         {
             "name": "psr/http-message",
