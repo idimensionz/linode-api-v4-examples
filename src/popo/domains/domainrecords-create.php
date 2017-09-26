@@ -1,7 +1,7 @@
 <?php
 /*
  * iDimensionz/{linode-api-v4-examples}
- * domains-create.php
+ * domainrecords-create.php
  *  
  * The MIT License (MIT)
  * 
@@ -27,16 +27,18 @@
 */
 
 /**
- * This file shows how to call the Domains POST endpoint to create a domain on your Linode.
+ * This file shows how to call the DomainRecords POST endpoint to create a domain record on an existing domain on your
+ * Linode.
  */
 
 require_once(dirname(dirname(dirname(dirname(__FILE__)))) . '/vendor/autoload.php');
 
 use iDimensionz\HttpClient\Guzzle\GuzzleHttpClient;
-use iDimensionz\LinodeApiV4\Api\Domains\DomainsApi;
-use iDimensionz\LinodeApiV4\Api\Domains\DomainModel;
+use iDimensionz\LinodeApiV4\Api\Domains\Records\DomainRecordsApi;
+use iDimensionz\LinodeApiV4\Api\Domains\Records\DomainRecordModel;
 
-echo 'This example will attempt to create an actual (master) domain on your Linode.' . PHP_EOL;
+echo 'This example will attempt to create an actual CNAME domain record on the domain you specify on your Linode.' .
+    PHP_EOL;
 $continue = readline('Are you sure you wish to continue? (y/n) ');
 
 if ('y' !== strtolower($continue)) {
@@ -44,7 +46,7 @@ if ('y' !== strtolower($continue)) {
     exit(0);
 }
 
-$domainName = readline('Please enter a valid domain name to create: ');
+$domainId = readline('Please enter a valid domain ID to create a record for: ');
 
 // Get the API token from the LINODE_API_TOKEN environment variable.
 // That environment variable needs to be set before running this script.
@@ -58,14 +60,14 @@ if ($token !== false) {
         ]
     ]);
     // Instantiate a DomainsApi injecting the HTTP client.
-    $domainsApi = new DomainsApi($httpClient);
-    $domainModel = new DomainModel();
-    // Domain, type and soa_email are all required fields for creating a domain.
-    $domainModel->setDomainName($domainName);
-    $domainModel->setType('master');
-    $domainModel->setSoaContactEmail('test@example.com');
+    $domainRecordsApi = new DomainRecordsApi($httpClient);
+    $domainRecordModel = new DomainRecordModel();
+    // Type is required for creating a domain record.
+    $domainRecordModel->setType(\iDimensionz\LinodeApiV4\Api\Domains\Records\DomainRecordType::TYPE_CNAME);
+    $domainRecordModel->setName('www');
+    $domainRecordModel->setTarget('google.com');
     try {
-        $isSuccess = $domainsApi->create($domainModel);
+        $isSuccess = $domainRecordsApi->create($domainId, $domainRecordModel);
     } catch (\GuzzleHttp\Exception\ServerException $se) {
         $isSuccess = false;
         echo $se->getTraceAsString();

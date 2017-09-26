@@ -54,12 +54,15 @@ if ($token !== false) {
     // -d for domain ID, r for record ID
     $options = getopt('d:r:');
 
-    if (isset($options['r'])) {
+    if (isset($options['r']) && isset($options['d'])) {
         // Call the function to get a single domain record.
         $domainRecords = $domainRecordApi->getById($options['d'], $options['r']);
-    } else {
+    } elseif (isset($options['d'])) {
         // Call the function to get all the domain records.
         $domainRecords = $domainRecordApi->getAll($options['d']);
+    } else {
+        echo 'You must supply a domain ID with the -d option.' . PHP_EOL;
+        $domainRecords = null;
     }
 
     // Output the domain data.
